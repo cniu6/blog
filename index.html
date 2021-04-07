@@ -1,0 +1,152 @@
+<html>
+  <html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <title>Zerohh’s blog </title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0" />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900">
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,700">
+  <link rel="stylesheet" type="text/css" href="assets/styles/site.css?version=1.0">
+  <link rel="shortcut icon" href="favicon.ico">
+<!--网上的一些字体？授权？代码？-->
+
+  <!-- baidu Analytice 百度网站流量统计,阉掉-->
+<!-->
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?61d179347697aa822807585b6c34191b";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+  
+  <!-- Global site tag (gtag.js) - Google Analytics 谷歌也来玩，也搞掉
+  
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-77253689-1"></script>-->
+  
+  <script>
+    Date.prototype.format = function(fmt) {
+      var o = {
+        "y+": this.getFullYear, //年
+        "M+": this.getMonth() + 1, //月份
+        "d+": this.getDate(), //日
+        "h+": this.getHours(), //小时
+        "m+": this.getMinutes(), //分
+        "s+": this.getSeconds() //秒
+      };
+      if (/(y+)/.test(fmt)) fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+      for (var k in o)
+        if (new RegExp("(" + k + ")").test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+      return fmt;
+    }
+    setInterval("document.getElementById('nowtime').innerHTML = (new Date()).format('yyyy年MM月dd日hh:mm:ss');", 1000);
+  </script>
+
+
+
+<!--网站计时-->
+<script>
+  function secondToDate(second) {
+    if (!second) {
+      return 0;
+    }
+    var time = new Array(0, 0, 0, 0, 0);
+    if (second >= 365 * 24 * 3600) {
+      time[0] = parseInt(second / (365 * 24 * 3600));
+      second %= 365 * 24 * 3600;
+    }
+    if (second >= 24 * 3600) {
+      time[1] = parseInt(second / (24 * 3600));
+      second %= 24 * 3600;
+    }
+    if (second >= 3600) {
+      time[2] = parseInt(second / 3600);
+      second %= 3600;
+    }
+    if (second >= 60) {
+      time[3] = parseInt(second / 60);
+      second %= 60;
+    }
+    if (second > 0) {
+      time[4] = second;
+    }
+    return time;
+  }
+</script>
+<script type="text/javascript" language="javascript">
+  function setTime() {
+    var create_time = Math.round(new Date(Date.UTC(2021, 03, 04, 15, 20, 01)).getTime() / 1000);//年，月-1，日，时，分，秒≥1//得到运行时间（可修改）
+    var timestamp = Math.round((new Date().getTime() + 8 * 60 * 60 * 1000) / 1000);
+    currentTime = secondToDate((timestamp - create_time));
+    currentTimeHtml = '              ' + currentTime[0] + ' 年' + currentTime[1] + '天' +
+      currentTime[2] + '时' + currentTime[3] + '分' + currentTime[4] +
+      '秒';
+    document.getElementById("hellotime").innerHTML = currentTimeHtml;
+  }
+  setInterval(setTime, 1000);
+</script>
+  
+  
+  
+
+<body>
+  <header class="main">
+    <nav class="main">
+ <a href="./index.html" class="active">主页</a>
+ <a href="http://work.viggoz.com/">项目</a>
+ <a href="http://photo.viggoz.com/">图册</a>
+ <a href="http://blog.viggoz.com/">博客</a>
+ <a href="https://cniu6.gitee.io/zerohh/">导航</a>
+     
+     
+     
+      <!-- <a href="./about.html">ABOUT已阉割反正<用不了/a> -->
+      
+    </nav>
+  </header>
+  <section id="about" class="animated bounce-in about_bg">
+    <div class="bg-align">
+      <h1>C牛6</h1>
+      <p>
+        <a>
+          我叫C牛6，目前是个学生
+        </a>
+        <br />
+        如果有事的话请联系我
+      </p>
+      <div class="social">
+        <!--a class="icon dribbble" href="https://dribbble.com/viggoz" target="_blank"></a>
+                <a class="icon behance" href="https://behance.net/viggoz" target="_blank"></a>
+                <a class="icon instagram" href="https://www.instagram.com/viggozw/" target="_blank"></a>
+                <a class="icon uicn" href="http://i.ui.cn/ucenter/146004.html" target="_blank"></a>
+                <a class="icon px" href="https://500px.com/viggoz" target="_blank"></a>
+                <a class="icon github" href="https://github.com/viggoz" target="_blank"></a>
+                <a class="icon twitter" href="https://twitter.com/viggo_z" target="_blank"></a>
+                <a class="icon weibo" href="http://weibo.com/272910299" target="_blank"></a-->
+  <a class="icon weibo" href="http://mail.163.com" target="_blank"></a>
+        <!--懒得改了-->
+        <a>zerohh666@163.com</a>
+      </div>
+  
+    <div class="copyright">
+      <a>©2021 粤ICP备18133680号</a>
+      <a href="https://github.com/ViggoZ/ViggoZ.github.io"> github原源码</a>
+      <div id="nowtime"></div>
+      <!--显示当前时间-->
+      <a href="https://gitee.com/cniu6/blog"> 感谢码云托管了:</a>
+      <span id="hellotime"></span>
+      <!--计算已经运行时间--><!--计算源码写的很神奇-->
+
+
+          
+           
+      </div>
+  <!--/section>
+  <section id="profile">
+  </section-->
+</body>
+</html>
